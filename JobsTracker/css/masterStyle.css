@@ -1,0 +1,57 @@
+﻿body {
+    padding-top:40px;
+    background-image: url(http://www.filterforge.com/filters/2056.jpg);
+    border: 8px ridge gold;
+}
+#customWell{  
+   background-image: radial-gradient(gold 0,#302F2F 100%); 
+   /*This is the colour I replaced in the radial-gradient with gold!!! ----->  #4D4B4B*/
+   border-color:#302F2F !important;
+}
+h1 {
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
+    background-image: radial-gradient(black 0,grey 100%);
+    color: gold;
+    font-family: Rockwell;
+    border:8px ridge gold ;
+}
+h3{
+    color: gold;
+}
+h5{
+    color:white;
+    font-size: 24px;
+    -webkit-text-stroke-width:1px;
+    -webkit-text-stroke-color: orange;
+}
+fieldset{
+    color:gold;
+    font-size:x-large;
+    -webkit-text-stroke-width:0.5px;
+    -webkit-text-stroke-color: white;
+}
+footer{
+    color:black;
+    font-size-adjust:inherit;
+    text-align:right;
+    padding-right: 10%;
+    padding-top:25px;
+    font-size: inherit;
+    font-weight: 300;
+    -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: yellow;
+    height: 80px;
+    background:black;
+    position:absolute;
+    width:100%;
+    bottom:0px;
+}
+.list-group-item{
+    background-color: #252222;
+    border:1px solid gold;
+}
+a{
+    color:brown;
+}

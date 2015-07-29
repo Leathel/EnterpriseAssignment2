@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="JobsTracker.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Job Manager</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/masterStyle.css" />
+    <!-- Latest compiled and minified JavaScript -->
+</head>
+<body>
+   <%--The nav and what not for every page--%>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/admin/MainMenu.aspx" class="navbar-brand">Home</a>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <%--public facing--%>
+                    <asp:PlaceHolder runat="server" ID="plhPublic">
+                        <li><a href="/Register.aspx">Register</a></li>
+                        <li><a href="/Login.aspx">Login</a></li>
+                    </asp:PlaceHolder>
+                   <%-- private facing --%>
+                    <asp:PlaceHolder runat="server" ID="plhPrivate">
+                        <li><a href="/admin/Jobs.aspx">Jobs</a></li>
+                        <li><a href="/admin/Employees.aspx">Employees</a></li>
+                        <li><a href="/admin/ShowCustomers.aspx">Customers</a></li>
+                        <li><a href="/admin/ShowContractors.aspx">Contractors</a></li>
+
+                        <li><a href="/Logout.aspx">Logout</a></li>
+                    </asp:PlaceHolder>
+
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    the error placeholder
+    <div>
+        <asp:PlaceHolder runat="server" ID="plhError">
+            <asp:TextBox runat="server" ID="ErrorMsgTextBox" Text=""></asp:TextBox>
+        </asp:PlaceHolder>
+    </div>
+
+
+    <form id="form1" runat="server" class="form-horizontal">
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer class="navbar" >
+        <div id="footer">
+            @2015 - Enterprise Computing Ben Ross & Jesse Johnston
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            jQuery("a").filter(function () {
+                return this.innerHTML.indexOf("Delete") == 0;
+            }).click(function () {
+                return confirm("Are you sure you want to delete this record?");
+            });
+        });
+
+    </script>
+
+    </body>
+</html>
